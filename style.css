@@ -1,0 +1,10 @@
+.body{
+    background: linear-gradient(to right, slateblue, lightblue);
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+.buttonStyle{
+    display: flex;
+}
