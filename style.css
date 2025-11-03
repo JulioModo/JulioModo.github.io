@@ -1,10 +1,84 @@
-#body{
-    background: linear-gradient(to right, slateblue, lightblue);
+/* Animation footer */
+@keyframes footerBlink {
+  0% { background: red; color: yellow; }
+  50% { background: green; color: white; }
+  100% { background: red; color: yellow; }
 }
-.flex{
-    display: flex;
-    flex-direction: row;
+
+/* Animation titre */
+@keyframes clignote {
+  0% { color: gold; }
+  50% { color: red; }
+  100% { color: gold; }
 }
-.buttonStyle{
-    display: flex;
+
+/* Animation titres liste */
+@keyframes h2Flash {
+  0% { color: yellow; }
+  50% { color: lime; }
+  100% { color: yellow; }
+}
+
+body {
+  background: linear-gradient(135deg, red, green);
+  font-family: "Comic Sans MS", cursive;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  color: gold;
+  text-shadow: 2px 2px 0 red;
+  margin: 2rem 0;
+  animation: clignote 1s infinite alternate;
+}
+
+h2 {
+  color: yellow;
+  text-shadow: 1px 1px 0 red;
+  font-size: 1.5rem;
+  animation: h2Flash 2s infinite alternate;
+}
+
+ul {
+  list-style-type: "🎁 ";
+  padding: 0;
+  margin: 2rem auto;
+  width: 80%;
+  background: rgba(0,0,0,0.3);
+  border: 5px dotted gold;
+  border-radius: 10px;
+}
+
+li {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: repeating-linear-gradient(
+    90deg,
+    lime 0 10px,
+    red 10px 20px
+  );
+  border: 3px solid gold;
+  border-radius: 6px;
+  color: black;
+}
+
+
+p {
+  font-style: italic;
+  background-color: rgba(255,255,255,0.2);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+footer {
+  background: red;
+  color: yellow;
+  border-top: 4px solid gold;
+  padding: 1rem;
+  font-size: 0.9rem;
+  animation: footerBlink 3s infinite alternate;
 }
