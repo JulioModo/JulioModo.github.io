@@ -42,6 +42,7 @@ async def log_action(guild, action_type, member, moderator, reason=None, extra_i
 #                    COMMANDES DE MODÉRATION
 # ============================================================
 
+# !kick <membre>
 @bot.command()
 @has_permissions(kick_members=True)
 async def kick(ctx, member: discord.Member, *, reason="Aucune raison donnée"):
@@ -63,7 +64,7 @@ async def kick(ctx, member: discord.Member, *, reason="Aucune raison donnée"):
     await ctx.send(f"👢 {member.mention} a été kick. (`{reason}`)")
     await log_action(ctx.guild, "KICK", member, ctx.author, reason)
 
-
+# !ban <membre>
 @bot.command()
 @has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason="Aucune raison donnée"):
@@ -76,7 +77,7 @@ async def ban(ctx, member: discord.Member, *, reason="Aucune raison donnée"):
     await ctx.send(f"🔨 {member.mention} banni. (`{reason}`)")
     await log_action(ctx.guild, "BAN", member, ctx.author, reason)
 
-
+# !warn <membre> <motif>
 @bot.command()
 @has_permissions(manage_messages=True)
 async def warn(ctx, member: discord.Member, *, reason="Aucune raison donnée"):
@@ -109,7 +110,7 @@ async def deban(ctx, user_id: int):
     except Exception as e:
         await ctx.send(f"❌ Erreur : {e}")
 
-
+# !clear <time> <unité>
 @bot.command()
 @has_permissions(manage_messages=True)
 async def clear(ctx, amount: int, unit: str):
@@ -144,7 +145,7 @@ async def clear(ctx, amount: int, unit: str):
     except Exception as e:
         await ctx.send(f"❌ Erreur : {e}")
 
-
+# !lock
 @bot.command()
 @has_permissions(manage_channels=True)
 async def lock(ctx):
@@ -156,7 +157,7 @@ async def lock(ctx):
     await log_action(ctx.guild, "LOCK", ctx.author, ctx.author,
                      extra_info=f"Salon {ctx.channel.mention} verrouillé")
 
-
+# !unlock
 @bot.command()
 @has_permissions(manage_channels=True)
 async def unlock(ctx):
