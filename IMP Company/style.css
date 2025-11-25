@@ -1,0 +1,52 @@
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    width: 100%;
+    background: #111;
+    height: 70px;
+}
+
+/* Les 3 cases */
+.nav-box {
+    flex: 1; /* = chaque case prend 1/3 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+
+/* Logo */
+.logo-box img {
+    height: 45px;
+    width: auto;
+}
+
+/* Underline animé (pour Chapitres + Réseaux) */
+.nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: red;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+    width: 60%;
+}
+
+/* Active lorsqu'on est sur la page */
+.nav-item.active::after {
+    width: 60%;
+}
+
+/* Le logo n'a pas d'underline */
+.logo-box::after {
+    display: none;
+}
