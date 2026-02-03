@@ -1,1 +1,19 @@
 V1:
+- Générateur de mots de passe
+- Gestions erreurs
+
+V2:
+- Stockage de mots de passe renseigné par l'utilisateur dans un JSON
+- Affichage du JSON dans la console
+
+V3:
+- V1 + V2
+- Séparation des fonctions dans un fichier annexé (fcts.py)
+
+V4:
+- V3
+- Ajout d'un moyen de stocker les MDPS générés dans le JSON avec accord de l'utilisateur et précision de l'URL
+
+V5:
+- V4
+- Changement de ```random``` vers ```secrets``` pour générer les MDPs
