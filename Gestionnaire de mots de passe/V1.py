@@ -1,9 +1,13 @@
+# Import des bibliothèques
 import secrets
+
+# Mise en place des constantes
 letters = 'abcdefghijklmnopqrstuvwxyz'
 caps = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 numbers = '0123456789'
 specials = '&(-_éàç)~#{[|`^@]}*µù%!§:/;.,?'
 
+# Demande de la longueur du mot de passe
 def ask_length(min_len=6, max_len=64):
     while True:
         s = input(f"Enter password length ({min_len}-{max_len}): ")
@@ -24,7 +28,7 @@ def ask_length(min_len=6, max_len=64):
 
         return length
 
-
+# Création du mot de passe avec ask_length()
 def create_password():
     length = ask_length()
     chars = letters + caps + numbers + specials
