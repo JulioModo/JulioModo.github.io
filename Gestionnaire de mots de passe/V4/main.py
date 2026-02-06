@@ -1,5 +1,5 @@
 # Récupération des fonctions mises dans 'functions.py' pour simplifier le code
-from functions import *
+import functions
 
 # Informe l'utilisateur du chargement du .JSON
 print("Chargement de la base de données et/ou création si elle est non-existante.")
@@ -26,3 +26,4 @@ if choice == 1:
 	if new_password == 1:
 		password = input("Quel est votre mot de passe?")
 	   add_entry(website, username, password)
+elif choice == functions.getkey():
