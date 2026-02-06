@@ -43,6 +43,13 @@ def update_entry(service, username=None, password=None):
         db[service]["password"] = password
     save_db(db)
 
+def delete_entry(service):
+    db = load_db()
+    if service not in db:
+        raise KeyError("Service introuvable.")
+    del db[service]
+    save_db(db)
+
 # Génération d'un mot de passe
 def ask_length(min_len=6, max_len=64):
     while True:
