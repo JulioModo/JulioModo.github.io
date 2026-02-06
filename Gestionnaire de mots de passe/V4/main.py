@@ -25,5 +25,15 @@ if choice == 1:
 	username = input("""Quel est votre nom d'utilisateur sur la plateforme?""")
 	if new_password == 1:
 		password = input("Quel est votre mot de passe?")
-	   add_entry(website, username, password)
-elif choice == functions.getkey():
+	    functions.add_entry(website, username, password)
+		print(f"Entrée pour {website} bien crée avec {username} en nom d'utilisateur et {password} en tant que mot de passe.")
+	elif new_password == 2:
+		 functions.add_entry(website, username, functions.create_password())
+		 print(f"Entrée pour {website} bien crée avec {username} en nom d'utilisateur et {password} en tant que mot de passe.")
+elif choice == 2:
+	 website = input("""Pour quel site souhaitez vous chercher un mot de passe?
+	 (Conseil: mettez soit l'URL du site (github.com), soit le nom du site (Github)""")
+	 print(functions.get_entry(website))
+	 continue
+elif choice == 3:
+	 
