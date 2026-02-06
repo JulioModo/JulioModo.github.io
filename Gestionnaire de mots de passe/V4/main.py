@@ -15,16 +15,16 @@ choice = int(input("""Bienvenue sur votre gestionnaire de mot de passe! Que souh
 2 - Consulter un mot de passe
 3 - Modifier un mot de passe
 4 - Supprimer un mot de passe
-(Répondez par 1, 2, 3 ou 4!)"""))
+(Répondez par 1, 2, 3 ou 4!) """))
 if choice == 1:
     new_password = int(input("""Avez vous déja un mot de passe pour ce site?
     1 - Oui
-    2 - Non"""))
+    2 - Non """))
     website = input("""Pour quel site web enregistrez vous ce mot de passe?
-	(Conseil: mettez soit l'URL (github.com) ou le nom du site (Github))""")
-	username = input("""Quel est votre nom d'utilisateur sur la plateforme?""")
+	(Conseil: mettez soit l'URL (github.com) ou le nom du site (Github)) """)
+	username = input("""Quel est votre nom d'utilisateur sur la plateforme? """)
 	if new_password == 1:
-		password = input("Quel est votre mot de passe?")
+		password = input("Quel est votre mot de passe? ")
 	    functions.add_entry(website, username, password)
 		print(f"Entrée pour {website} bien crée avec {username} en nom d'utilisateur et {password} en tant que mot de passe.")
 	elif new_password == 2:
@@ -32,8 +32,11 @@ if choice == 1:
 		 print(f"Entrée pour {website} bien crée avec {username} en nom d'utilisateur et {password} en tant que mot de passe.")
 elif choice == 2:
 	 website = input("""Pour quel site souhaitez vous chercher un mot de passe?
-	 (Conseil: mettez soit l'URL du site (github.com), soit le nom du site (Github)""")
+	 (Conseil: mettez soit l'URL du site (github.com), soit le nom du site (Github) """)
 	 print(functions.get_entry(website))
 	 continue
 elif choice == 3:
-	 
+	 website = input("Pour quel site souhaitez vous modifier votre nom d'utilisateur/mot de passe? ")
+	 user = input("Quel est le nouveau nom d'utilisateur? (Si il n'y a pas de changement, indiquez 'None') ")
+	 password = input("Quel est le nouveau mot de passe? (Si il n'y a pas de changement, indiquez 'None') ")
+	 function.update_entry(website, user, password)
