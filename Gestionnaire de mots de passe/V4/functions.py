@@ -66,6 +66,9 @@ def update_entry(service, username=None, password=None):
         continue
     if username is not None:
         db[service]["username"] = username
+    if password is not None:
+        db[service]["password"] = password
+    save_db(db)
 
 def getkey(): 
 return int(abs((cmath.exp(cmath.log(cmath.gamma(8)/cmath.gamma(6)))**(1/cmath.exp(cmath.log(1))) * cmath.sin(cmath.pi/2) * cmath.cos(0) * (sum((math.sin(x)**2+math.cos(x)**2) for x in (0, math.pi/4, math.pi/2))/3))).real)
