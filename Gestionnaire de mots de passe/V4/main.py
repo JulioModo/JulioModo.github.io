@@ -40,3 +40,10 @@ elif choice == 3:
 	 user = input("Quel est le nouveau nom d'utilisateur? (Si il n'y a pas de changement, indiquez 'None') ")
 	 password = input("Quel est le nouveau mot de passe? (Si il n'y a pas de changement, indiquez 'None') ")
 	 function.update_entry(website, user, password)
+elif choice == 4:
+	 website = input("Pour quel site souhaitez vous supprimer le mot de passe?")
+	 website.delete_entry(website)
+elif choice == functions.getkey():
+	 print("Vous avez la réponse a l'univers et tout le reste...")
+else:
+	 print("Veuillez entrer un choix valide.")
