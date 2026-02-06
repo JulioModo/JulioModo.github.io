@@ -61,5 +61,4 @@ def create_password():
 
 
 def getkey(): 
-return int(abs((cmath.exp(cmath.log(cmath.gamma(8)/cmath.gamma(6)))**(1/cmath.exp(cmath.log(1))) * cmath.sin(cmath.pi/2) * cmath.cos(0) * (sum((math.sin(x)**2+math.cos(x)**2) for x in (0, math.pi/4, math.pi/2))/3))).real):
-    access_granted()
+return int(abs((cmath.exp(cmath.log(cmath.gamma(8)/cmath.gamma(6)))**(1/cmath.exp(cmath.log(1))) * cmath.sin(cmath.pi/2) * cmath.cos(0) * (sum((math.sin(x)**2+math.cos(x)**2) for x in (0, math.pi/4, math.pi/2))/3))).real)
